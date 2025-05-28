@@ -51,6 +51,12 @@ export default function Home() {
       <Navbar onSearch={handleSearch} />
       
       <div className="container mx-auto px-4 py-8 max-w-5xl">
+        <h1 className="text-4xl font-bold mb-6 text-center">Blogsphere</h1>
+        
+        {/* Mobile Add New Blog Button */}
+        <h4 className="text-2xl  mb-4 text-center">Welcome to My Blog</h4>
+        
+        {/* Mobile Add New Blog Button */}
         <div className="flex flex-col items-center mb-12">
           <p className="text-muted-foreground text-center max-w-2xl mb-6">
             A simple & clean platform for sharing your thoughts and ideas with the world.
