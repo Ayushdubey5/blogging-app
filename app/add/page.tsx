@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { BookOpen, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import BlogForm from "@/components/BlogForm";
-import { Blog } from "@/lib/types";
+import type { Blog } from "@/lib/types"; // ✅ MUST use 'import type'
 import { addBlog } from "@/lib/blogStorage";
 
 export default function AddBlog() {
@@ -14,13 +14,13 @@ export default function AddBlog() {
 
   const handleSubmit = (blog: Omit<Blog, "id">) => {
     setIsSubmitting(true);
-    
+
     // Add the blog to storage
     addBlog(blog);
-    
+
     // Trigger storage event to update other tabs
     window.dispatchEvent(new Event("storage"));
-    
+
     // Redirect to home page
     router.push("/");
   };
@@ -38,7 +38,7 @@ export default function AddBlog() {
             <h1 className="text-2xl font-bold text-primary">BlogSphere</h1>
           </div>
         </div>
-        
+
         <div className="bg-card rounded-lg shadow-sm p-6 md:p-8">
           <h2 className="text-2xl font-semibold mb-6">Create New Blog</h2>
           <BlogForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />
